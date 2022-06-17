@@ -1,6 +1,4 @@
-(
-cp test.radl github.com/orviz/IM-sqaaas-test/test.radl
-mkdir /im
+(mkdir /im
 cat <<EOF >> /im/auth.dat
 # InfrastructureManager auth
 type = InfrastructureManager; username = %s; password = %s
@@ -14,10 +12,10 @@ fi
 printf "$(cat /im/auth.dat)" "${IM_USER}" "${IM_PASS}" "${OPENSTACK_USER}" "${OPENSTACK_PASS}" > /im/auth.dat
 echo "Generated auth.dat file:"
 ls -l /im/auth.dat
-echo "Printing IM config file: github.com/orviz/IM-sqaaas-test/test.radl"
-cat github.com/orviz/IM-sqaaas-test/test.radl
+echo "Printing IM config file: ./test.radl"
+cat ./test.radl
 echo
-im_client.py -r "https://appsgrycap.i3m.upv.es:31443/im/" -a "/im/auth.dat" create_wait_outputs github.com/orviz/IM-sqaaas-test/test.radl > ./im_radl.json
+im_client.py -r "https://appsgrycap.i3m.upv.es:31443/im/" -a "/im/auth.dat" create_wait_outputs ./test.radl > ./im_radl.json
 RETURN_CODE=$?
 echo "im_client.py create_wait_outputs return code: ${RETURN_CODE}"
 echo "Infrastructure Manager output:"

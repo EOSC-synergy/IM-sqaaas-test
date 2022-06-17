@@ -10,16 +10,13 @@ config:
     github.com/EOSC-synergy/sqaaas-tooling:
       branch: 1.7.0-alpha2
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
-    github.com/orviz/IM-sqaaas-test:
-      branch: master
-      repo: https://github.com/orviz/IM-sqaaas-test
 environment:
   JPL_DOCKERFORCEBUILD: enabled
 sqa_criteria:
   SvcQC.Dep:
     repos:
-      github.com/orviz/IM-sqaaas-test im_client:
+      this_repo:
         commands:
-        - /usr/bin/env sh .sqa/script.tacky-blue-bombay.sh
-        container: svcqc.dep_scummy-gamboge-squirt
+        - /usr/bin/env sh .sqa/script.surly-magnolia-moose.sh
+        container: svcqc.dep_craggy-cerulean-falcon
 timeout: 600
