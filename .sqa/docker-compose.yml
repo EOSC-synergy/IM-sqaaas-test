@@ -1,5 +1,5 @@
 services:
-  svcqc.dep_craggy-cerulean-falcon:
+  svcqc.dep_cranky-taupe-mouse:
     entrypoint:
     - /bin/sleep
     - infinity
